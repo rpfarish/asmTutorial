@@ -1,11 +1,9 @@
 section .data
-    fizz dq "Fizz", 10
-    buzz dq "Buzz", 10
-    fizzbuzz dq "FizzBuzz", 10
-    newline dq 10
-    
-    num dq 30
-    
+    fizz dq "Fizz", 10, 0
+    buzz dq "Buzz", 10, 0
+    newline dq 10, 0
+    num dq 100
+
 
 section .bss
     digit_space resb 100
