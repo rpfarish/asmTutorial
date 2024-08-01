@@ -76,7 +76,7 @@ print_newline:
     mov rax, 1 ; sys_write
     mov rdi, 1 ; sys_out
     lea rsi, [newline]
-    mov rdx, 9
+    mov rdx, 1
     syscall
     jmp loop
 
@@ -125,5 +125,5 @@ _printRAXLoop2:
 
 end:
     mov rax, 60
-    mov rdi, rdx
+    mov rdi, 0
     syscall
