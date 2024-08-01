@@ -24,20 +24,16 @@ loop:
     inc r10
 
     ; fizz
-    mov rax, r10        
-    xor rdx, rdx    ; remainder               
-    mov rbx, 3          
-    div rbx
-
+    mov rbx, 3 
+    call calc_mod
     cmp rdx, 0
     je print_fizz
+    
 fizz_return:
 
     ; buzz
-    mov rax, r10     
-    xor rdx, rdx    ; remainder       
-    mov rbx, 5       
-    div rbx       
+    mov rbx, 5
+    call calc_mod    
     cmp rdx, 0
     je print_buzz
 
@@ -52,6 +48,12 @@ print_nums:
     jmp loop
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+calc_mod:
+    mov rax, r10        
+    xor rdx, rdx    ; remainder                        
+    div rbx
+    ret
 
 print_fizz:
     inc r9
